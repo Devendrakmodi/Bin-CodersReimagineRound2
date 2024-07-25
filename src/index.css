@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: PPFraktion;
+  src: url(./Fonts/PPFraktion.woff2);
+}
+
+@font-face {
+  font-family: Basel Grotesk;
+  src: url(./Fonts/BaselGrotesk-Regular.woff2);
+}
+
+@font-face {
+  font-family: Gustavo;
+  src: url(./Fonts/gustavo-medium-webfont..woff2);
+}
+@font-face {
+  font-family: Dashhorizon;
+  src: url(./Fonts/Dashhorizon-eZ5wg.otf);
+}
+@font-face {
+  font-family: FtySpeedyCasual;
+  src: url(./Fonts/FtySpeedyCasual001Ncv-yAP3.otf);
+}
+@font-face {
+  font-family: MouldyCheese;
+  src: url(./Fonts/MouldyCheeseRegular-WyMWG.ttf);
+}
+@font-face {
+  font-family: Harewataru;
+  src: url(./Fonts/HarewataruSansShavian-pg9r1.ttf);
+}
+@font-face {
+  font-family: UltimateGear;
+  src: url(./Fonts/UltimateGear-EaV0g.otf);
+}
+@font-face {
+  font-family: UltimateGearSlant;
+  src: url(./Fonts/UltimateGearSlant-ax9eJ.otf);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+}
+
+::selection {
+  background-color: #687c7b80;
+}
+
+@layer base {
+  body::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+      225deg,
+      rgba(69, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 1) 99%,
+      rgba(69, 0, 0, 1) 100%
+    );
+    border-radius: 20px;
+  }
+}
+@layer components {
+  .btn-hover {
+    @apply relative transition-all duration-200 ease-in cursor-pointer;
+  }
+
+  .btn-hover::before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: white;
+    transition: width 200ms ease-in;
+  }
+
+  .btn-hover:hover::before {
+    width: 100%;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .rotate-animation {
+    animation: rotate 5s linear infinite;
+  }
+}
